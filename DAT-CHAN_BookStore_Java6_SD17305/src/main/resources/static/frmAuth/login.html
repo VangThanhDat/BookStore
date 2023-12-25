@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<div ng-controller="loginCtrl">
+
+    <div class="vh-100 d-flex justify-content-center align-items-center">
+        <form class="w-25 w-25 border p-3 rounded shadow slide-down" name="frmLogin" novalidate>
+            <h3 class="text-center mb-3">Đăng nhập</h3>
+            <div class="form-group mb-3">
+                <label for="username">Tên đăng nhập</label>
+                <input type="text" name="username" ng-model="formData.username" ng-model-options="{updateOn: 'blur'}"
+                    class="form-control" required>
+                <span ng-show="frmLogin.username.$invalid && formSubmitted" class="pull-left" style="color: red;">Vui
+                    lòng nhập tên
+                    tài khoản</span>
+            </div>
+            <div class="form-group mb-3">
+                <label for="password">Mật khẩu</label>
+                <input type="password" name="password" ng-model="formData.password" class="form-control"
+                    ng-model-options="{updateOn: 'blur'}" required>
+                <span ng-show="frmLogin.password.$invalid && formSubmitted" class="pull-left" style="color: red;">Vui
+                    lòng nhập mật
+                    khẩu</span>
+            </div>
+            <div class="form-check-inline mb-3">
+                <input class="form-check-input" type="checkbox" name="remember-me" ng-model="formData.rememberMe"
+                    id="flexCheckChecked" ng-checked="true">
+                <label class="form-check-label" for="flexCheckChecked">
+                    Ghi nhớ đăng nhập?
+                </label>
+
+            </div>
+            <a href="#!forgot-password" class="ms-5" style="text-decoration: none;">Quên mật khẩu</a>
+            <button class="btn btn-primary col-12" ng-click="login()">Đăng nhập</button>
+            <div class="my-2 form-group text-center">
+                <a style="text-decoration: none;" href="#!register">Chưa có tài khoản?</a> | <a href="/"
+                    class="my-5 col-12" style="text-decoration: none;">Quay lại trang chủ</a>
+            </div>
+            <div class="separator my-2">
+                <hr class="separator-line-left">
+                <span class="or-text">Hoặc</span>
+                <hr class="separator-line-right">
+            </div>
+            <div class="col-12 d-flex justify-content-center align-items-center mb-3">
+                <a class="btn btn-outline-dark w-100" href="/oauth2/authorization/google" role="button"
+                    style="text-transform:none">
+                    <img width="20px" style="margin-bottom:3px; margin-right:5px" alt="Google sign-in"
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
+                    Đăng nhập bằng google
+                </a>
+            </div>
+            <div class="col-12 d-flex justify-content-center align-items-center mb-3">
+                <a class="btn btn-outline-dark w-100" href="/oauth2/authorization/facebook" role="button"
+                    style="text-transform:none">
+                    <img width="20px" style="margin-bottom:3px; margin-right:5px" alt="Google sign-in"
+                        src="https://upload.wikimedia.org/wikipedia/commons/9/91/036-facebook.png" />
+                    Đăng nhập bằng facebook
+                </a>
+            </div>
+            <!-- <a href="/oauth2/authorization/google">Google</a>
+            <a href="/oauth2/authorization/facebook">Facebook</a> -->
+            <!-- ... -->
+        </form>
+    </div>
+
+</div>
+
+</html>

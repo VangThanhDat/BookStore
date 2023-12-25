@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{/admin/layout/layout :: dynamic(~{::main})}">
+
+<body class="is-preload">
+	<!-- content -->
+	<main>
+		<h1 class="text-center mb-2" style="margin-top: -50px;">Quản lý
+			sách</h1>
+		<div class="row col-md-12 justify-content-center">
+			<form th:action="@{/admin/manage/products/save}" method="post"
+				th:object="${product}" class="col-md-8 mb-2"
+				enctype="multipart/form-data">
+				<div class="form-group">
+					<label>Mã Sách</label> <input type="text" class="form-control"
+						th:field="*{id}" /> <i th:errors="*{id}" style="color: red;"></i>
+					<i style="color: red;" th:text="${errors}"></i>
+				</div>
+				<div class="form-group">
+					<label>Tên sách</label> <input type="text" class="form-control"
+						th:field="*{name}" /> <i th:errors="*{name}" style="color: red;"></i>
+				</div>
+				<div class="form-group">
+					<label>Tác giả</label> <input type="text" class="form-control"
+						th:field="*{author}" /> <i th:errors="*{author}"
+						style="color: red;"></i>
+				</div>
+				<div class="form-group">
+					<label>Giá</label> <input type="number" class="form-control"
+						min="0" th:field="*{price}" /> <i th:errors="*{price}"
+						style="color: red;"></i>
+				</div>
+
+				<div class="form-group">
+					<label>Số lượng</label> <input type="number" class="form-control"
+						min="0" th:field="*{quantity}" /> <i th:errors="*{quantity}"
+						style="color: red;"></i>
+				</div>
+<!--  -->
+				<div class="form-group">
+					<label>Thể loại</label> <select class="form-control"
+						name="categories" th:field="*{category}">
+						<option th:each="category : ${categories}"
+							th:value="${category.id}" th:text="${category.name}"></option>
+					</select>
+				</div>
+
+				<div class="form-group">
+					<label>Mô tả</label>
+					<textarea cols="30" rows="5" class="form-control" id="description"
+						path="description" th:field="*{description}"></textarea>
+				</div>
+
+				<div class="form-group">
+					<!-- -->
+					<img class="ml-5 col-md-1" id="img" th:src="@{'/image/'+*{image}}"
+						width="100%"
+						style="border: 1px solid rgba(0, 0, 0, 0.067); min-width: 200px !important; min-height: 250px !important;" />
+
+					<input type="file" id="imgInput" name="photo" style="cursor: pointer;"
+						class="form-control-file mt-2"
+						accept="image/png, image/jpg, image/svg" 
+						/>
+
+				</div>
+
+				<hr style="max-height: 2px !important; background-color: black;">
+
+				<div class="row col-md-12 justify-content-center">
+					<button class="btn btn-success" style="border-radius: 20px;">Thêm
+						sách</button>
+					<button
+						th:formaction="@{/admin/manage/products/update/{key}(key=${id})}"
+						class="btn btn-warning mx-3" style="border-radius: 20px;">Cập
+						nhật</button>
+					<button
+						th:formaction="@{/admin/manage/products/delete/{key}(key=${id})}"
+						class="btn btn-danger mr-3 px-3" style="border-radius: 20px;">Xóa</button>
+					<a th:href="@{/admin/manage/products}" class="btn btn-primary"
+						style="border-radius: 20px;">Làm mới</a>
+				</div>
+			</form>
+		</div>
+
+		<form action="/admin/manage/products/search" method="POST"
+			class="row mt-5">
+			<div class="form-group row col-md-12 justify-content-center">
+				<label class="col-form-label"><strong>Tìm kiếm
+						sách:</strong></label>
+				<div class="col-md-4">
+					<input type="search" class="form-control"
+						placeholder="Nhập tên sách" name="keyword"
+						th:value="${param.keyword}">
+				</div>
+				<button type="submit" class="btn btn-success">Tìm kiếm</button>
+			</div>
+		</form>
+
+		<table class="table table-hover mt-2 mb-5">
+			<thead class="thead-dark text-center">
+				<tr>
+					<th class="col-md-1">Mã sách</th>
+					<th class="col-md-2">Tên sách</th>
+					<th class="col-md-1">Giá</th>
+					<th class="col-md-1">Số lượng</th>
+					<th class="col-md-2">Hình</th>
+					<th class="col-md-2">Thể loại</th>
+					<th class="col-md-1">Tác giả</th>
+					<th class="col-md-1"></th>
+
+				</tr>
+			</thead>
+			<tbody class="bg-light">
+
+				<tr th:each="p, state:${list}">
+					<td th:text="*{p.id}"></td>
+					<td th:text="*{p.name}"></td>
+					<td th:text="*{p.price}"></td>
+					<td class="text-center" th:text="*{p.quantity}"></td>
+					<td class="text-center"><img th:src="@{'/image/'+*{p.image}}"
+						width="100%" /></td>
+						
+					<td class="text-center" th:text="*{p.Category.name}"></td>
+					<td th:text="*{p.author}"></td>
+					<td><a
+						th:href="@{/admin/manage/products/{id}(id=${p.id})}">Chi
+							tiết</a></td>
+				</tr>
+
+			</tbody>
+		</table>
+		<div class="row col-md-12 justify-content-center mb-4">
+			<nav aria-label="Page navigation example">
+				<ul class="pagination">
+
+					<th:block th:if="${list.number == 0}">
+						<li class="page-item"><a class="page-link" href=""
+							style="pointer-events: none;">&lt;&lt;</a></li>
+						<li class="page-item"><a class="page-link" href=""
+							style="pointer-events: none;">&lt;</a></li>
+					</th:block>
+
+					<th:block th:if="${list.number > 0}">
+						<li class="page-item"><a class="page-link"
+							th:href="@{|/admin/manage/products?p=0|}">&lt;&lt;</a></li>
+						<li class="page-item"><a class="page-link"
+							th:href="@{|/admin/manage/products?p=${list.number-1}|}">&lt;</a></li>
+					</th:block>
+
+					<th:block th:each="i : ${#numbers.sequence(1, list.totalPages)}">
+						<li class="page-item"><a a class="page-link"
+							th:href="@{|/admin/manage/products?p=${i-1}|}">[[${i}]]</a>
+					</th:block>
+
+					<th:block th:if="${list.number < list.totalPages - 1}">
+						<li class="page-item"><a class="page-link"
+							th:href="@{|/admin/manage/products?p=${list.number+1}|}">&gt;</a>
+						<li class="page-item"><a class="page-link"
+							th:href="@{|/admin/manage/products?p=${list.totalPages-1}|}">&gt;&gt;</a></li>
+					</th:block>
+
+					<th:block th:if="${list.number == list.totalPages - 1}">
+						<li class="page-item"><a class="page-link" href=""
+							style="pointer-events: none;">&gt;</a></li>
+						<li class="page-item"><a class="page-link" href=""
+							style="pointer-events: none;">&gt;&gt;</a></li>
+					</th:block>
+
+				</ul>
+			</nav>
+		</div>
+	</main>
+	>
+	<!-- content -->
+</html>

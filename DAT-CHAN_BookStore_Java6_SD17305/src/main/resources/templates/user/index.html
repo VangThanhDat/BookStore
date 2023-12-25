@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="icon" href="img/favicon.png" type="image/png" />
+  <title>DAT-CHAN Book Store</title>
+  <!-- Bootstrap CSS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="stylesheet" href="/user/css/bootstrap.css" />
+  <link rel="stylesheet" href="/user/vendors/linericon/style.css" />
+  <link rel="stylesheet" href="/user/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="/user/css/themify-icons.css" />
+  <link rel="stylesheet" href="/user/css/flaticon.css" />
+  <link rel="stylesheet" href="/user/vendors/owl-carousel/owl.carousel.min.css" />
+  <link rel="stylesheet" href="/user/vendors/lightbox/simpleLightbox.css" />
+  <link rel="stylesheet" href="/user/vendors/nice-select/css/nice-select.css" />
+  <link rel="stylesheet" href="/user/vendors/animate-css/animate.css" />
+  <link rel="stylesheet" href="/user/vendors/jquery-ui/jquery-ui.css" />
+  <!-- main css -->
+  <link rel="stylesheet" href="/user/css/style.css" />
+  <link rel="stylesheet" href="/user/css/responsive.css" />
+</head>
+
+<body ng-app="myapp" ng-controller="myctrl">
+  <!--================Header Menu Area =================-->
+  <header class="header_area">
+    <div class="main_menu">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light w-100">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <a class="navbar-brand logo_h offset-2" href="/">
+            <img src="/user/img/logo3.png" alt="" width="80px" height="70px" />
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse offset w-100" id="navbarSupportedContent">
+            <div class="row w-100 mr-0">
+              <div class="col-lg-6 pr-0">
+                <ul class="nav navbar-nav pull-left">
+                  <li class="nav-item ">
+                    <a class="nav-link" href="/">Trang chủ</a>
+                  </li>
+                  <li class="nav-item ">
+                    <a class="nav-link" href="#!blog">Giới thiệu</a>
+                  </li>
+                  <li class="nav-item ">
+                    <a class="nav-link" href="#!category">Sách</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#!contact">Liên hệ</a>
+                  </li>
+                  <li ng-hide="name === 'Tài khoản'" class="nav-item ">
+                    <a class="nav-link" href="#!favorite">Yêu thích</a>
+                  </li>
+                </ul>
+
+              </div>
+
+              <div class="col-lg-4 pr-0 ">
+                <ul class="nav navbar-nav navbar-right right_nav pull-right">
+
+                  <li ng-hide="name === 'Tài khoản'" class="nav-item ">
+                    <a class="nav-link" href="#!cart">
+                      Giỏ hàng
+                      <i class="ti-shopping-cart" style="font-size: 16px !important;"></i>
+                      <span
+                        style="position: relative; top: -7px !important; border-radius: 45% !important; right: 10% !important;"
+                        class="badge badge-danger" ng-show="sanpham.count > 0">{{sanpham.count}}</span>
+                    </a>
+                  </li>
+
+                  <li class="nav-item ">
+                    <p class="mx-2"></p>
+                  </li>
+
+                  <li ng-hide="name === 'Tài khoản'" class="nav-item">
+                    <a class="nav-link" href="#!order">Lịch sử</a>
+                  </li>
+
+                  <li class="nav-item submenu dropdown">
+                    <a href="#" class="nav-link dropdown-toggle icons" data-toggle="dropdown" role="button"
+                      aria-haspopup="true" aria-expanded="false"> <i class="ti-user" aria-hidden="true"></i>
+                      {{ name }}</a>
+                    <ul class="dropdown-menu">
+                      <li ng-hide="name !== 'Tài khoản'" class="nav-item">
+                        <a class="nav-link" href="/auth#!/login">Đăng nhập</a>
+                      </li>
+                      <li ng-hide="name !== 'Tài khoản'" class="nav-item">
+                        <a class="nav-link" href="/auth#!/register">Đăng ký</a>
+                      </li>
+                      <li ng-hide="name !== 'Tài khoản'" class="nav-item">
+                        <a class="nav-link" href="/auth#!/forgot-password">Quên mật khẩu</a>
+                      </li>
+                      <li ng-hide="name === 'Tài khoản'" class="nav-item">
+                        <a href="/auth#!/change-info" class="nav-link">Thay đổi thông tin</a>
+                      </li>
+
+                      <li ng-hide="name === 'Tài khoản'" class="nav-item" ng-click="logout()">
+                        <a class="nav-link">Đăng xuất</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <!--================Header Menu Area =================-->
+
+  <!--================ Main =================-->
+  <main class="min-vh-100">
+    <ng-view></ng-view>
+  </main>
+
+  <!--================ End Main =================-->
+
+  <!--================ start footer Area  =================-->
+  <style>
+    .row h3 {
+      color: aliceblue;
+    }
+  </style>
+
+  <footer class="footer-area section_gap">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12 col-lg-4 single-footer-widget" style="margin-left: 50px; color: aliceblue;">
+          <h3>Liên hệ</h3>
+          <p><i class="fa fa-telephone"></i> Hotline : 0948342514</p>
+          <p><i class="bi bi-shop"></i> Địa chỉ : Ninh Kiều - Cần Thơ</p>
+          <p><i class="bi bi-clock-history"></i> Giờ làm việc : 7h - 22h, T2 - T7</p>
+          <p><i class="bi bi-envelope"></i> Email : thinhcaibat06@gmail.com</p>
+        </div>
+        <div class="col-12 col-lg-3 mg  footer-social" style="margin-left: 45px;">
+          <h3>Mạng xã hội</h3>
+          <p><i class="fa fa-facebook"></i> <a href="#">Facebook</a></p>
+          <p><i class="fa fa-instagram"></i> <a href="#">Instagram</a></p>
+          <p><i class="fa fa-github"></i> <a href="#"> Github</a></p>
+          <p><i class="fa fa-youtube"></i> <a href="#">Youtube</a></p>
+        </div>
+        <div class="col-12 col-lg-4 ">
+          <h3>Giới thiệu</h3>
+          <iframe width="100%" height="170" src="https://www.youtube.com/embed/UJg1w9pbNvo" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen=""></iframe>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!--================ End footer Area  =================-->
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+  <script src="/user/js/layout.js"></script>
+  <script src="/user/js/app-config.js"></script>
+  <script src="/user/js/jquery-3.2.1.min.js"></script>
+  <script src="/user/js/popper.js"></script>
+  <script src="/user/js/bootstrap.min.js"></script>
+  <script src="/user/js/stellar.js"></script>
+  <script src="/user/vendors/lightbox/simpleLightbox.min.js"></script>
+  <script src="/user/vendors/nice-select/js/jquery.nice-select.min.js"></script>
+  <script src="/user/vendors/isotope/imagesloaded.pkgd.min.js"></script>
+  <script src="/user/vendors/isotope/isotope-min.js"></script>
+  <script src="/user/vendors/owl-carousel/owl.carousel.min.js"></script>
+  <script src="/user/js/jquery.ajaxchimp.min.js"></script>
+  <script src="/user/vendors/counter-up/jquery.waypoints.min.js"></script>
+  <script src="/user/vendors/counter-up/jquery.counterup.js"></script>
+  <script src="/user/js/mail-script.js"></script>
+  <script src="/user/js/theme.js"></script>
+  <script src="/user/js/cartCtrl.js"></script>
+  <script src="/user/js/checkoutCtrl.js"></script>
+  <script src="/user/js/historyCtrl.js"></script>
+  <script src="/user/js/OrderDetailCtrl.js"></script>
+  <script src="/user/js/favoriteCtrl.js"></script>
+</body>
+
+</html>

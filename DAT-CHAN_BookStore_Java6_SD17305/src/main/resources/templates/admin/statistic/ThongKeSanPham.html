@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{/admin/layout/layout :: dynamic(~{::main})}">
+
+<body class="is-preload">
+	<!-- content -->
+
+	<main>
+
+		<h1 class="text-center mb-2" style="margin-top: -50px;">Thống kê
+			sản phẩm</h1>
+		<br>
+
+		<div class="col-lg-12">
+			<div class="row">
+
+				<div class="col-lg-5">
+					<div id="productTypeChart"></div>
+				</div>
+				<div class="col-lg-6">
+					<div id="productSalesChart"></div>
+				</div>
+			</div>
+		</div>
+		<form th:action="@{/admin/statictis/TKSP}" method="get">
+			<select name="selectedMonth">
+				<option value="">Tất cả các tháng</option>
+				<option th:each="month : ${#numbers.sequence(1, 12)}"
+					th:value="${month}" th:text="${'Tháng ' + month}"></option>
+			</select> 
+			<select name="selectedYear">
+				<option th:each="year : ${#numbers.sequence(2023, 2023)}"
+					th:value="${year}" th:text="${year}"></option>
+			</select>
+
+			<button type="submit" class="btn btn-outline-primary">Lọc</button>
+		</form>
+		<table class="table table-hover mt-1">
+			<thead class="table-info">
+				<tr>
+					<th>Mã sản phẩm</th>
+					<th>Tên sản phẩm</th>
+					<th>Thể loại</th>
+					<th>Số lượng</th>
+					<th>Giá bán</th>
+					<th>Số lượng đã bán</th>
+				</tr>
+			</thead>
+			<div th:if="${soldProducts.isEmpty()}" class="alert alert-info">
+				Không tìm thấy sản phẩm được bán</div>
+			<tbody>
+				<tr th:each="product : ${soldProducts}">
+					<td th:text="*{product.productId}"></td>
+					<td th:text="*{product.productName}"></td>
+					<td th:text="${product.productCategory}" ></td>
+					<td th:text="*{product.sold}" style="text-align: center;"></td>
+					<td
+						th:text="*{#numbers.formatDecimal(product.productPrice, 0, 'COMMA', 0, 'POINT')} + ' VND'"></td>
+					<td th:text="*{product.soldQuantity}" style="text-align: center;"></td>
+				</tr>
+			</tbody>
+		</table>
+
+	</main>
+	>
+	<!-- content -->
+</html>

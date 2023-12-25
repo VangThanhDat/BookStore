@@ -1,0 +1,322 @@
+<!--================Home Banner Area =================-->
+<section class="banner_area">
+  <div class="banner_inner d-flex align-items-center">
+    <div class="container">
+      <div class="banner_content d-md-flex justify-content-between align-items-center">
+        <div class="mb-3 mb-md-0">
+          <h2>Lịch sử mua</h2>
+        </div>
+        <div class="page_link">
+          <a href="/">Trang chủ</a>
+          <a href="#!order">Lịch sử</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--================End Home Banner Area =================-->
+
+<!--================Cart Area =================-->
+<section class="cart_area">
+  <div class="container">
+
+    <ul class="nav nav-tabs nav-justified ">
+      <li class="nav-item">
+        <a href="" class="nav-link active" data-toggle="tab" role="tab" data-target="#orderall">Tất cả đơn hàng</a>
+      </li>
+
+      <li class="nav-item">
+        <a href="" class="nav-link" data-toggle="tab" role="tab" data-target="#oderwait">Đơn hàng đang chờ xác
+          nhận</a>
+      </li>
+      <li class="nav-item">
+        <a href="" class="nav-link" data-toggle="tab" role="tab" data-target="#orderaccept">Đơn hàng đã xác nhận</a>
+      </li>
+      <li class="nav-item">
+        <a href="" class="nav-link" data-toggle="tab" role="tab" data-target="#ordercancel">Đơn hàng đã hủy</a>
+      </li>
+    </ul>
+
+    <div class="tab-content" style="min-height: 580px !important;" id="myTabContent">
+     
+      <div class="tab-pane fade show active" id="orderall" role="tabpanel">
+        <div class="cart_inner text-dark" style="min-height: 560px !important;">
+          <div class="table-responsive">
+            <table class="table table-hover">
+              <thead>
+                <tr class="table-info">
+                  <th class="col-sm-1">STT</th>
+                  <th scope="col" class="text-center">Mã hóa đơn</th>
+                  <th scope="col" class="text-center">Tổng tiền</th>
+                  <th scope="col" class="text-center">Ngày mua</th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="order in itemsAll">
+                  <td class="text-left">{{$index+1}}</td>
+                  <td class="text-center">{{order.id}}</td>
+                  <td class="text-center">{{order.total| number: 0}} VNĐ</td>
+                  <td class="text-center">{{order.date | date:'dd - MM - yyyy'}}</td>
+                  <td><a href="#!/order/{{ order.id }}" class="btn btn-info" title="Chi tiết hóa đơn"><i
+                        class="ti-zoom-in"></i></a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- <nav class="row justify-content-center mt-3">
+          <ul class="pagination">
+            <li class="page-item">
+              <a class="page-link" href="" ng-click="firstOderShip()">
+                <span aria-hidden="true">&laquo;</span>
+              </a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="" ng-click="prevOderShip()">
+                <span aria-hidden="true">&lsaquo;</span>
+              </a>
+            </li>
+
+            <li class="page-item">
+              <a class="page-link" href="" ng-click="nextOderShip()">
+                <span aria-hidden="true">&rsaquo;</span>
+              </a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="" ng-click="lastOderShip()">
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+            </li>
+          </ul>
+        </nav> -->
+      </div>
+     
+      <div class="tab-pane fade" id="oderwait" role="tabpanel">
+        <div class="cart_inner text-dark" style="min-height: 560px !important;">
+          <div class="table-responsive">
+            <table class="table table-hover">
+              <thead>
+                <tr class="table-info">
+                  <th class="col-sm-1">STT</th>
+                  <th scope="col" class="text-center">Mã hóa đơn</th>
+                  <th scope="col" class="text-center">Tổng tiền</th>
+                  <th scope="col" class="text-center">Ngày mua</th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="order in itemsWait">
+                  <td class="text-left">{{$index+1}}</td>
+                  <td class="text-center">{{order.id}}</td>
+                  <td class="text-center">{{order.total| number: 0}} VNĐ</td>
+                  <td class="text-center">{{order.date | date:'dd - MM - yyyy'}}</td>
+                  <td>
+                    <a href="#!/order/{{ order.id }}" class="btn btn-info " title="Chi tiết hóa đơn">
+                      <i class="ti-zoom-in"></i>
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- <nav class="row justify-content-center mt-3">
+          <ul class="pagination">
+            <li class="page-item">
+              <a class="page-link" href="" ng-click="firstOderWait()">
+                <span aria-hidden="true">&laquo;</span>
+              </a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="" ng-click="prevOderWait()">
+                <span aria-hidden="true">&lsaquo;</span>
+              </a>
+            </li>
+
+            <li class="page-item">
+              <a class="page-link" href="" ng-click="nextOderWait()">
+                <span aria-hidden="true">&rsaquo;</span>
+              </a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="" ng-click="lastOderWait()">
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+            </li>
+          </ul>
+        </nav> -->
+
+      </div>
+
+      <div class="tab-pane fade" id="orderaccept" role="tabpanel">
+        <div class="cart_inner text-dark" style="min-height: 560px !important;">
+          <div class="table-responsive">
+            <table class="table table-hover">
+              <thead>
+                <tr class="table-info">
+                  <th class="col-sm-1">STT</th>
+                  <th scope="col" class="text-center">Mã hóa đơn</th>
+                  <th scope="col" class="text-center">Tổng tiền</th>
+                  <th scope="col" class="text-center">Ngày mua</th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="order in itemsAccept">
+                  <td class="text-left">{{$index+1}}</td>
+                  <td class="text-center">{{order.id}}</td>
+                  <td class="text-center">{{order.total| number: 0}} VNĐ</td>
+                  <td class="text-center">{{order.date | date:'dd - MM - yyyy'}}</td>
+                  <td><a href="#!/order/{{ order.id }}" class="btn btn-info" title="Chi tiết hóa đơn"><i
+                        class="ti-zoom-in"></i></a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- <nav class="row justify-content-center mt-3">
+          <ul class="pagination">
+            <li class="page-item">
+              <a class="page-link" href="" ng-click="firstOderAccept()">
+                <span aria-hidden="true">&laquo;</span>
+              </a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="" ng-click="prevOderAccept()">
+                <span aria-hidden="true">&lsaquo;</span>
+              </a>
+            </li>
+
+            <li class="page-item">
+              <a class="page-link" href="" ng-click="nextOderAccept()">
+                <span aria-hidden="true">&rsaquo;</span>
+              </a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="" ng-click="lastOderAccept()">
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+            </li>
+          </ul>
+        </nav> -->
+
+      </div>
+
+      <!-- 
+      <div class="tab-pane fade" id="ordership" role="tabpanel">
+        <div class="cart_inner text-dark" style="min-height: 560px !important;">
+          <div class="table-responsive">
+            <table class="table table-hover">
+              <thead>
+                <tr class="table-info">
+                  <th class="col-sm-1">STT</th>
+                  <th scope="col" class="text-center">Mã hóa đơn</th>
+                  <th scope="col" class="text-center">Tổng tiền</th>
+                  <th scope="col" class="text-center">Ngày mua</th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="order in itemsShip">
+                  <td class="text-left">{{$index+1}}</td>
+                  <td class="text-center">{{order.id}}</td>
+                  <td class="text-center">{{order.total| number: 0}} VNĐ</td>
+                  <td class="text-center">{{order.date | date:'dd - MM - yyyy'}}</td>
+                  <td><a href="#!/order/{{ order.id }}" class="btn btn-info" title="Chi tiết hóa đơn"><i
+                        class="ti-zoom-in"></i></a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <nav class="row justify-content-center mt-3">
+          <ul class="pagination">
+            <li class="page-item">
+              <a class="page-link" href="" ng-click="firstOderShip()">
+                <span aria-hidden="true">&laquo;</span>
+              </a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="" ng-click="prevOderShip()">
+                <span aria-hidden="true">&lsaquo;</span>
+              </a>
+            </li>
+
+            <li class="page-item">
+              <a class="page-link" href="" ng-click="nextOderShip()">
+                <span aria-hidden="true">&rsaquo;</span>
+              </a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="" ng-click="lastOderShip()">
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+            </li>
+          </ul>
+        </nav> 
+      </div>
+      -->
+
+      <div class="tab-pane fade" id="ordercancel" role="tabpanel">
+        <div class="cart_inner text-dark" style="min-height: 560px !important;">
+          <div class="table-responsive">
+            <table class="table table-hover">
+              <thead>
+                <tr class="table-info">
+                  <th class="col-sm-1">STT</th>
+                  <th scope="col" class="text-center">Mã hóa đơn</th>
+                  <th scope="col" class="text-center">Tổng tiền</th>
+                  <th scope="col" class="text-center">Ngày mua</th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="order in itemsCancel">
+                  <td class="text-left">{{$index+1}}</td>
+                  <td class="text-center">{{order.id}}</td>
+                  <td class="text-center">{{order.total| number: 0}} VNĐ</td>
+                  <td class="text-center">{{order.date | date:'dd - MM - yyyy'}}</td>
+                  <td><a href="#!/order/{{ order.id }}" class="btn btn-info" title="Chi tiết hóa đơn"><i
+                        class="ti-zoom-in"></i></a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- <nav class="row justify-content-center mt-3">
+          <ul class="pagination">
+            <li class="page-item">
+              <a class="page-link" href="" ng-click="firstOderCancel()">
+                <span aria-hidden="true">&laquo;</span>
+              </a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="" ng-click="prevOderCancel()">
+                <span aria-hidden="true">&lsaquo;</span>
+              </a>
+            </li>
+
+            <li class="page-item">
+              <a class="page-link" href="" ng-click="nextOderCancel()">
+                <span aria-hidden="true">&rsaquo;</span>
+              </a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="" ng-click="lastOderCancel()">
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+            </li>
+          </ul>
+        </nav> -->
+      </div>
+
+    </div>
+
+  </div>
+</section>

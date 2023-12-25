@@ -1,0 +1,526 @@
+[33mcommit 3129ec194cbce5996e33a864399ed7c590ce1236[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: e29a193 3b554f0
+Author: QuiBuuIzTheBest <tronghenry273@gmail.com>
+Date:   Mon Aug 14 16:08:30 2023 +0700
+
+    Merge branch 'main' of https://github.com/haydt21/DAT-CHAN_BookStore_Java6_SD17305
+
+[33mcommit e29a193e88624a0cd248df4f48e536ab700166a2[m
+Author: QuiBuuIzTheBest <tronghenry273@gmail.com>
+Date:   Mon Aug 14 16:04:31 2023 +0700
+
+    update address
+
+[33mcommit 3b554f0c96a678442c9f7a48b3ccfbbb03bc7ffb[m
+Merge: 9726087 e40d132
+Author: datvt2003 <tdat30404@gmail.com>
+Date:   Mon Aug 14 02:59:12 2023 +0700
+
+    Merge branch 'main' of https://github.com/haydt21/DAT-CHAN_BookStore_Java6_SD17305
+
+[33mcommit e40d1329730ec4574469e504fdcd624e31c98671[m
+Author: thinh22112003 <thinhcaibat06@gmail.com>
+Date:   Mon Aug 14 02:46:28 2023 +0700
+
+    Trang chủ admin
+
+[33mcommit 9726087ed4b40801a5236b8262a51f121f1090b3[m
+Author: datvt2003 <tdat30404@gmail.com>
+Date:   Mon Aug 14 02:41:48 2023 +0700
+
+    Oder, OrderDetail done 80% (Cancel,Sort)
+
+[33mcommit b36fa0769e4a5dba947907aab6010b0f383b7298[m
+Author: thinh22112003 <thinhcaibat06@gmail.com>
+Date:   Mon Aug 14 01:10:27 2023 +0700
+
+    Chỉnh sửa phân trang
+
+[33mcommit 8d370d78034c56b1e31b5b8fced5e8be299e78fc[m
+Author: QuiBuuIzTheBest <tronghenry273@gmail.com>
+Date:   Sun Aug 13 16:48:57 2023 +0700
+
+    count item cart
+
+[33mcommit 260dd37ddb95050baed10087258e50c74b971c66[m
+Author: QuiBuuIzTheBest <tronghenry273@gmail.com>
+Date:   Sun Aug 13 00:13:41 2023 +0700
+
+    fix remove, clear cart
+
+[33mcommit 3084b19169d7ef892a6d46daa07652a5cef442c3[m
+Merge: 870c0f9 b1639ef
+Author: QuiBuuIzTheBest <tronghenry273@gmail.com>
+Date:   Sat Aug 12 23:58:17 2023 +0700
+
+    Merge branch 'main' of https://github.com/haydt21/DAT-CHAN_BookStore_Java6_SD17305
+
+[33mcommit 870c0f9111c658a64fa25729781313e7c6f9e227[m
+Author: QuiBuuIzTheBest <tronghenry273@gmail.com>
+Date:   Sat Aug 12 23:58:12 2023 +0700
+
+    Fix cà giựt cà giựt cart
+
+[33mcommit b1639eff691ee0f0654ea481ff8a3360a4d85fbf[m
+Author: thinh22112003 <thinhcaibat06@gmail.com>
+Date:   Sat Aug 12 19:37:29 2023 +0700
+
+    Tổng hợp thống kê
+
+[33mcommit 4b3ed229c54082da622b6a002c0cd1d8247a33cb[m
+Merge: 0a516de 4cd3465
+Author: QuiBuuIzTheBest <tronghenry273@gmail.com>
+Date:   Sat Aug 12 15:18:54 2023 +0700
+
+    Merge branch 'main' of https://github.com/haydt21/DAT-CHAN_BookStore_Java6_SD17305
+
+[33mcommit 0a516ded642bbcfaf0c1c895ea75641c352d7c53[m
+Author: QuiBuuIzTheBest <tronghenry273@gmail.com>
+Date:   Sat Aug 12 15:18:50 2023 +0700
+
+    Fix trùng user(email, phone, id)
+
+[33mcommit 4cd3465e183ead115dd1058e6608f85ff20431d6[m
+Author: HayDT03 <101821636+haydt21@users.noreply.github.com>
+Date:   Sat Aug 12 15:04:14 2023 +0700
+
+    fix login
+
+[33mcommit 7c4d2ce49f8be718d462c1010f1a10f564e20951[m
+Author: HayDT03 <101821636+haydt21@users.noreply.github.com>
+Date:   Sat Aug 12 13:59:34 2023 +0700
+
+    encode password, fix user role
+
+[33mcommit ca92f189ef2460f01184fed5191c77c983129e0a[m
+Author: HayDT03 <101821636+haydt21@users.noreply.github.com>
+Date:   Sat Aug 12 08:08:33 2023 +0700
+
+    fix add user admin, register,...
+
+[33mcommit a5a55ed59a3dd356c3d0e5baa00ba9ca1fd63887[m
+Author: QuiBuuIzTheBest <tronghenry273@gmail.com>
+Date:   Fri Aug 11 23:24:42 2023 +0700
+
+    vnpay
+
+[33mcommit 5bd15413fba28a28fe1edc5e12e14a11036b0a6c[m
+Author: HayDT03 <101821636+haydt21@users.noreply.github.com>
+Date:   Fri Aug 11 07:45:40 2023 +0700
+
+    fix jwt token, fix add to cart, fix admin
+
+[33mcommit 1af6c2a104992dcbc3d2576a9abb54240258b47e[m
+Author: QuiBuuIzTheBest <tronghenry273@gmail.com>
+Date:   Wed Aug 9 16:11:43 2023 +0700
+
+    commit send mail khi mua hàng
+
+[33mcommit 98e2c4acc5f977e06a23aaef3a050f1bc3e31d04[m
+Author: QuiBuuIzTheBest <tronghenry273@gmail.com>
+Date:   Tue Aug 8 21:04:51 2023 +0700
+
+    commit OrderDetail
+
+[33mcommit 8a3ea08e09ab20d653bdf8a3c8442a6a80cdb4d4[m
+Author: thinh22112003 <thinhcaibat06@gmail.com>
+Date:   Mon Aug 7 22:10:22 2023 +0700
+
+    Sửa phân trang
+
+[33mcommit 55a92601958f4823890ed043238c5f22404194c9[m
+Author: HayDT03 <101821636+haydt21@users.noreply.github.com>
+Date:   Mon Aug 7 19:58:43 2023 +0700
+
+    fix
+
+[33mcommit a78831bfb6f014cc1c3e04f8507997a91766bda3[m
+Author: HayDT03 <101821636+haydt21@users.noreply.github.com>
+Date:   Mon Aug 7 19:55:02 2023 +0700
+
+    fix token
+
+[33mcommit 79fb6198fbfab4498ae60c3d932761348c65f392[m
+Author: QuiBuuIzTheBest <tronghenry273@gmail.com>
+Date:   Mon Aug 7 17:57:48 2023 +0700
+
+    cart success 99%
+
+[33mcommit 9708657a2263f8fef253834fd9d4948514bbf4a7[m
+Author: HayDT03 <101821636+haydt21@users.noreply.github.com>
+Date:   Sun Aug 6 21:07:38 2023 +0700
+
+    sủa một số lỗi
+
+[33mcommit c8c150b65137a7c09fcd73b0c6885232935f415e[m
+Author: HayDT03 <101821636+haydt21@users.noreply.github.com>
+Date:   Sun Aug 6 21:07:09 2023 +0700
+
+    sửa một số lỗi
+
+[33mcommit 700d816d38e9fff40108a281c7a371097049b121[m
+Author: HayDT03 <101821636+haydt21@users.noreply.github.com>
+Date:   Sun Aug 6 21:07:04 2023 +0700
+
+    sửa một số lỗi
+
+[33mcommit 8d1d96d27c1435e3f984231195e9e2ff14cec834[m
+Author: QuiBuuIzTheBest <tronghenry273@gmail.com>
+Date:   Sun Aug 6 00:48:08 2023 +0700
+
+    update delete Cart
+
+[33mcommit a9515f3416a18ddbc2540e977073fc154539d419[m
+Author: QuiBuuIzTheBest <tronghenry273@gmail.com>
+Date:   Sat Aug 5 19:29:43 2023 +0700
+
+    commit order
+
+[33mcommit 7677a67b67bd8d85342cf2a8d013c441456c8d34[m
+Author: datvt2003 <tdat30404@gmail.com>
+Date:   Sat Aug 5 14:08:00 2023 +0700
+
+    Commit lại (order)
+
+[33mcommit 96d650c58c7a3b4b554118dc323277981742e3fa[m
+Author: QuiBuuIzTheBest <tronghenry273@gmail.com>
+Date:   Sat Aug 5 13:26:02 2023 +0700
+
+    commit fix token api
+
+[33mcommit d2bb7d47a5f6c2d29589b2a4adf3bc6690f38cb6[m
+Author: QuiBuuIzTheBest <tronghenry273@gmail.com>
+Date:   Sat Aug 5 01:18:45 2023 +0700
+
+    add product form cart
+
+[33mcommit 1ee4825a64db069688928c0559a98f1d6d4cb8a4[m
+Merge: c439fef 211627a
+Author: QuiBuuIzTheBest <tronghenry273@gmail.com>
+Date:   Fri Aug 4 23:41:08 2023 +0700
+
+    Merge branch 'main' of https://github.com/haydt21/DAT-CHAN_BookStore_Java6_SD17305
+
+[33mcommit 211627a37f45b8dc43632f5f76d2ca7ec962cb28[m
+Author: thinh22112003 <thinhcaibat06@gmail.com>
+Date:   Fri Aug 4 23:31:56 2023 +0700
+
+    Trang sách (tìm kiếm SP, Sắp xếp, phân trang)
+
+[33mcommit c3767fc61c24117a8d0de5355f76335f5f8e53db[m
+Merge: 2915747 340c7ab
+Author: datvt2003 <tdat30404@gmail.com>
+Date:   Fri Aug 4 23:24:47 2023 +0700
+
+    again
+
+[33mcommit 291574797160491dce9063728a0b9c9bb8c75e58[m
+Author: datvt2003 <td27022003@gmail.com>
+Date:   Fri Aug 4 23:12:58 2023 +0700
+
+    Get Order By Token
+
+[33mcommit 340c7abb33b8d5869d64aa8e25fda8b7981337f6[m
+Author: HayDT03 <101821636+haydt21@users.noreply.github.com>
+Date:   Fri Aug 4 23:12:33 2023 +0700
+
+    change pass, fix login, register
+
+[33mcommit c439fefd7c348fb74c09edb7ba48d220b3d3ddad[m
+Merge: 3a2a902 f6ab0e2
+Author: QuiBuuIzTheBest <tronghenry273@gmail.com>
+Date:   Fri Aug 4 22:00:14 2023 +0700
+
+    Merge branch 'main' of https://github.com/haydt21/DAT-CHAN_BookStore_Java6_SD17305
+
+[33mcommit 3a2a902640fcc750bf16e40d1a5e35b7e6ece535[m
+Author: QuiBuuIzTheBest <tronghenry273@gmail.com>
+Date:   Fri Aug 4 21:57:10 2023 +0700
+
+    commit order and checkout
+
+[33mcommit f6ab0e295417caacb21d9cdfa85bcc6cec0ad3ff[m
+Author: thinh22112003 <thinhcaibat06@gmail.com>
+Date:   Fri Aug 4 19:19:07 2023 +0700
+
+    Sửa logo, Chọn theo danh mục, phân trang
+
+[33mcommit 535fa43073e37a30e8fcdedc7095bc7cabc06a28[m
+Author: HayDT03 <101821636+haydt21@users.noreply.github.com>
+Date:   Fri Aug 4 19:03:29 2023 +0700
+
+    mail service, schedule add
+
+[33mcommit 463a3a64ce158f6337e6e559d9d3b296419ea1b0[m
+Merge: aec8675 ca66242
+Author: HayDT03 <101821636+haydt21@users.noreply.github.com>
+Date:   Fri Aug 4 10:19:53 2023 +0700
+
+    Merge branch 'main' of https://github.com/haydt21/DAT-CHAN_BookStore_Java6_SD17305
+
+[33mcommit aec8675fbdb743f887dc9b4ee7824289a2b6e443[m
+Author: HayDT03 <101821636+haydt21@users.noreply.github.com>
+Date:   Fri Aug 4 10:15:48 2023 +0700
+
+    update login, register, change info, sweat alert 2
+
+[33mcommit ca66242e3ff57b7decb9fbac972f813a6822f462[m
+Author: thinh22112003 <thinhcaibat06@gmail.com>
+Date:   Fri Aug 4 04:26:22 2023 +0700
+
+    Category
+
+[33mcommit 9bc373925e244af6794f00cac4d8dbd43bf5147a[m
+Merge: ac959de 4edfe8d
+Author: QuiBuuIzTheBest <tronghenry273@gmail.com>
+Date:   Fri Aug 4 03:52:03 2023 +0700
+
+    Merge branch 'main' of https://github.com/haydt21/DAT-CHAN_BookStore_Java6_SD17305
+
+[33mcommit ac959de10da307e6446add2d29150b7a8bf328aa[m
+Author: QuiBuuIzTheBest <tronghenry273@gmail.com>
+Date:   Fri Aug 4 03:51:57 2023 +0700
+
+    commit UserADMIN
+
+[33mcommit 4edfe8d39f8c90d16b6786573080d4947e095291[m
+Author: thinh22112003 <thinhcaibat06@gmail.com>
+Date:   Fri Aug 4 02:49:47 2023 +0700
+
+    Load dữ liệu trang sách, phân trang, sửa 1 số trang(Giới thiệu, Liên hệ)
+
+[33mcommit 0e05050fb0d996b01c374eb69d58c75b4b851ba2[m
+Author: HayDT03 <101821636+haydt21@users.noreply.github.com>
+Date:   Fri Aug 4 02:20:09 2023 +0700
+
+    hay update
+
+[33mcommit 9a79e63bb2f875deacf17f69ba9bda2322a8529d[m
+Author: HayDT03 <101821636+haydt21@users.noreply.github.com>
+Date:   Fri Aug 4 02:09:38 2023 +0700
+
+    update token
+
+[33mcommit 913b6d25ef58fff027397c36dfdd05215d89627d[m
+Author: HayDT03 <101821636+haydt21@users.noreply.github.com>
+Date:   Fri Aug 4 02:08:24 2023 +0700
+
+    update cart
+
+[33mcommit d361675246ba88902ca57997bc388d46e2ae5a09[m
+Author: HayDT03 <101821636+haydt21@users.noreply.github.com>
+Date:   Fri Aug 4 01:15:37 2023 +0700
+
+    hay update
+
+[33mcommit eb7c2bca06ab2bbc3f2d55deea893f05dc117434[m
+Author: thinh22112003 <thinhcaibat06@gmail.com>
+Date:   Fri Aug 4 01:08:11 2023 +0700
+
+    Layout.js
+
+[33mcommit beab67fca31c2d512c29a977f36faf6f770c0479[m
+Author: HayDT03 <101821636+haydt21@users.noreply.github.com>
+Date:   Fri Aug 4 00:53:52 2023 +0700
+
+    update login-ctrl
+
+[33mcommit bc536207c4c21ce5ee346535d7097d251d6a551e[m
+Merge: a39a6f2 601fb1c
+Author: QuiBuuIzTheBest <tronghenry273@gmail.com>
+Date:   Fri Aug 4 00:51:06 2023 +0700
+
+    Merge branch 'main' of https://github.com/haydt21/DAT-CHAN_BookStore_Java6_SD17305
+
+[33mcommit a39a6f21bd0a73e95993bf6a9f26e680770cf725[m
+Author: QuiBuuIzTheBest <tronghenry273@gmail.com>
+Date:   Fri Aug 4 00:46:59 2023 +0700
+
+    cart vs checkout
+
+[33mcommit 601fb1c00a8b0cf37b28058c423ec7747231979f[m
+Author: HayDT03 <101821636+haydt21@users.noreply.github.com>
+Date:   Thu Aug 3 21:47:05 2023 +0700
+
+    update product fix mapping
+
+[33mcommit 7b49be210d0f4df27740755273f7ddf61b2a912f[m
+Author: thinh22112003 <thinhcaibat06@gmail.com>
+Date:   Thu Aug 3 19:27:36 2023 +0700
+
+    Sửa layout.js
+
+[33mcommit 5a0efb3230459f1f93abece730951934e20cf46f[m
+Author: thinh22112003 <thinhcaibat06@gmail.com>
+Date:   Thu Aug 3 19:16:25 2023 +0700
+
+    Trang chủ và product detail
+
+[33mcommit 19402520e2d22b6f77b02b5127b722ca050e3ccb[m[33m ([m[1;31morigin/trongHenry-branch[m[33m, [m[1;32mtrongHenry-branch[m[33m)[m
+Author: HayDT03 <101821636+haydt21@users.noreply.github.com>
+Date:   Thu Aug 3 10:30:38 2023 +0700
+
+    Bảo mật api bằng jwt, login, logout
+
+[33mcommit df8f9822a85a182fc78f97067b5bee49de6858f2[m
+Merge: b507979 bed58f8
+Author: QuiBuuIzTheBest <tronghenry273@gmail.com>
+Date:   Tue Aug 1 00:08:54 2023 +0700
+
+    Merge branch 'main' of https://github.com/haydt21/DAT-CHAN_BookStore_Java6_SD17305
+
+[33mcommit b507979652776a27264cfc8405f8c16eac000ab8[m
+Author: QuiBuuIzTheBest <tronghenry273@gmail.com>
+Date:   Tue Aug 1 00:08:48 2023 +0700
+
+    commit user template
+
+[33mcommit bed58f8617d1d26a54234c84ee3f3b551b88389a[m
+Author: datvt2003 <td27022003@gmail.com>
+Date:   Wed Jul 26 10:01:38 2023 +0700
+
+    Project manager done
+
+[33mcommit 7ef243aa0bbbabe2b97c97baa793ea5e4ac474c0[m
+Merge: 748fd8a 8ac6307
+Author: QuiBuuIzTheBest <tronghenry273@gmail.com>
+Date:   Sun Jul 23 14:24:21 2023 +0700
+
+    Merge branch 'main' of https://github.com/haydt21/DAT-CHAN_BookStore_Java6_SD17305
+
+[33mcommit 748fd8ac2bb240af706c19319c3da21ffdf9728e[m
+Author: QuiBuuIzTheBest <tronghenry273@gmail.com>
+Date:   Sun Jul 23 14:24:13 2023 +0700
+
+    update validate user
+
+[33mcommit 8ac63076cda5c1ba063a8a5a32cf483635488b4f[m
+Author: thinh22112003 <thinhcaibat06@gmail.com>
+Date:   Thu Jul 20 19:05:12 2023 +0700
+
+    Trang Thống kê
+
+[33mcommit a029fac155f166d56fe0e935237c04100131dbc9[m
+Author: datvt2003 <td27022003@gmail.com>
+Date:   Thu Jul 20 17:48:27 2023 +0700
+
+    Đã chuyển qua file validate
+
+[33mcommit f8c5d1a4912453f5c5f55837b3ae8042915fe6f6[m
+Merge: 3c0f21a 105ab85
+Author: QuiBuuIzTheBest <tronghenry273@gmail.com>
+Date:   Thu Jul 20 14:14:30 2023 +0700
+
+    Merge branch 'main' of https://github.com/haydt21/DAT-CHAN_BookStore_Java6_SD17305
+
+[33mcommit 3c0f21a9110acfc922183e4cd2702b2186da2b70[m
+Author: QuiBuuIzTheBest <tronghenry273@gmail.com>
+Date:   Thu Jul 20 14:14:08 2023 +0700
+
+    fix null user
+
+[33mcommit 105ab85520aa6aa07b2bb6b2700e1f1ca8bac940[m
+Author: datvt2003 <td27022003@gmail.com>
+Date:   Thu Jul 20 05:55:26 2023 +0700
+
+    Product(done 90%) Không upload dc hình(KO BIẾT LÀM PHẦN NÀY)
+
+[33mcommit 3963fc63d986be36e1ac2f3cc306ff444958f20b[m
+Author: QuiBuuIzTheBest <tronghenry273@gmail.com>
+Date:   Thu Jul 20 00:48:02 2023 +0700
+
+    validator
+
+[33mcommit bab4e152958001515f849839d22f79144ff8aed3[m
+Author: HayDT03 <101821636+haydt21@users.noreply.github.com>
+Date:   Wed Jul 19 23:22:24 2023 +0700
+
+    update order detail
+
+[33mcommit 80eb370d8b53314b444ffc2d78df0c3aa65fb71a[m
+Merge: 7a07f14 ddb74eb
+Author: QuiBuuIzTheBest <tronghenry273@gmail.com>
+Date:   Wed Jul 19 22:09:56 2023 +0700
+
+    Merge branch 'main' of https://github.com/haydt21/DAT-CHAN_BookStore_Java6_SD17305
+
+[33mcommit 7a07f14a9ddf795fd208bc8c8c5e6c3248a1aeef[m
+Author: QuiBuuIzTheBest <tronghenry273@gmail.com>
+Date:   Wed Jul 19 22:07:21 2023 +0700
+
+    fix RequestMaping
+
+[33mcommit ddb74eb58fbcefc54b37eb25e7a156933d2cd9cf[m
+Author: HayDT03 <101821636+haydt21@users.noreply.github.com>
+Date:   Wed Jul 19 06:59:32 2023 +0700
+
+    Update Order Manage
+
+[33mcommit 9a6b915f8443d00e2196e729dc533f4ea4ec7fe5[m
+Author: HayDT03 <101821636+haydt21@users.noreply.github.com>
+Date:   Wed Jul 19 04:13:28 2023 +0700
+
+    Update OrderController.class
+
+[33mcommit 4ead26b91872ed3d13b3f218ec8c1e0d52954fd0[m
+Author: HayDT03 <101821636+haydt21@users.noreply.github.com>
+Date:   Wed Jul 19 04:13:09 2023 +0700
+
+    update order
+
+[33mcommit 5580d2f8f3884cbba4252c4809f9ab403eae2037[m
+Author: HayDT03 <101821636+haydt21@users.noreply.github.com>
+Date:   Wed Jul 19 00:01:06 2023 +0700
+
+    hay test update
+
+[33mcommit 8701bcc7c02d936d469dc50df955cce66c1fabce[m
+Author: HayDT03 <101821636+haydt21@users.noreply.github.com>
+Date:   Tue Jul 18 23:57:31 2023 +0700
+
+    update project ui and controller
+
+[33mcommit f895b3e240560997f54320a3b6a975460bca69e9[m
+Author: QuiBuuIzTheBest <tronghenry273@gmail.com>
+Date:   Tue Jul 18 18:14:26 2023 +0700
+
+    commit xepHinh
+
+[33mcommit f87099ea0c4368a28e292cd8aab5ede59017f524[m
+Merge: 5709157 9a580e7
+Author: QuiBuuIzTheBest <tronghenry273@gmail.com>
+Date:   Tue Jul 18 15:38:14 2023 +0700
+
+    Merge branch 'main' of https://github.com/haydt21/DAT-CHAN_BookStore_Java6_SD17305
+
+[33mcommit 5709157419dfcadc18f7d15511d822a5f02adbd1[m
+Author: QuiBuuIzTheBest <tronghenry273@gmail.com>
+Date:   Tue Jul 18 15:31:40 2023 +0700
+
+    còn sắp xếp
+
+[33mcommit 9a580e7b474513e0305bbe547f837512071dcb78[m
+Author: HayDT03 <101821636+haydt21@users.noreply.github.com>
+Date:   Mon Jul 17 22:23:47 2023 +0700
+
+    hay commit
+
+[33mcommit e1ef718f63b0beef1d6f67cab80a37a2a3434224[m
+Author: QuiBuuIzTheBest <tronghenry273@gmail.com>
+Date:   Sun Jul 16 17:09:09 2023 +0700
+
+    User
+
+[33mcommit c743037fccd8be492b45d57df37b865f152c081f[m
+Author: HayDT03 <101821636+haydt21@users.noreply.github.com>
+Date:   Thu Jul 13 02:53:01 2023 +0700
+
+    Create .gitignore
+
+[33mcommit b47e7f8608aaccb94333250d098f318221e60227[m
+Author: HayDT03 <101821636+haydt21@users.noreply.github.com>
+Date:   Wed Jul 12 19:21:32 2023 +0700
+
+    Update project
+
+[33mcommit 1070

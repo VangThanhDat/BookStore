@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{/admin/layout/layout :: dynamic(~{::main})}">
+
+<!-- content   -->
+
+<main class="services">
+    <h1 class="text-center mb-5">Quản lý đơn hàng</h1>
+    <form action="/admin/manage/order" class="row" method="post">
+        <div class="form-group row col-md-12 justify-content-center">
+            <label class="col-form-label"><strong>Tìm kiếm hóa đơn:</strong></label>
+            <div class="col-md-4 ml-2 mr-2">
+                <input type="search" class="form-control" placeholder="Nhập tên khách hàng" name="keyword">
+            </div>
+            <button type="submit" class="btn btn-success">Tìm kiếm</button>
+        </div>
+    </form>
+    <div th:if="${message != null}">
+        <!-- Nội dung hiển thị khi message tồn tại -->
+        <h3 class="text-center mt-3" th:text="${message}"></h3>
+    </div>
+    <div th:unless="${message != null}">
+        <div class="container-fluid my-5">
+            <table class="table table-hover">
+                <thead class="table-info">
+                    <tr>
+                        <th>Mã hóa đơn</th>
+                        <th>Người dùng</th>
+                        <th>Tổng tiền</th>
+                        <th>Ngày lập</th>
+                        <th>Trạng thái</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="item : ${page}" th:object="${item}">
+                        <th th:text="*{id}"></th>
+                        <td th:text="*{user.fullname}"></td>
+                        <td th:text="*{#numbers.formatDecimal(total, 0, 'COMMA', 0, 'POINT')} + ' VND'"></td>
+                        <td th:text="*{#dates.format(date, 'dd/MM/yyyy')}"></td>
+                        <td th:text="*{status == 0 ? 'Chờ xác nhận' : (status == 1 ? 'Đã xác nhận' : 'Đã xóa')}">
+                        </td>
+                        <td><a th:href="@{/admin/manage/detail-order/{id}(id=*{id})}" class="btn btn-info">Chi tiết</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="row col-md-12 justify-content-center mt-4">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    <li class="page-item">
+                        <a class="page-link" th:href="@{/admin/manage/order(p=1)}" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+
+                    <li class="page-item"><a class="page-link"
+                            th:href="@{/admin/manage/order(p=${page.number < 1 ? 1 : page.number})}">&lt;</a></li>
+                    <li class="page-item" th:each="item : ${#numbers.sequence(0, page.totalPages - 1)}">
+                        <a class="page-link" th:href="@{/admin/manage/order(p=${item + 1})}" th:text="${item + 1}"></a>
+                    </li>
+                    <li class="page-item"><a class="page-link"
+                            th:href="@{/admin/manage/order(p=${page.totalPages > 0 ? page.number + 2 > page.totalPages ? page.totalPages : page.number + 2 : 1})}">&gt;</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link"
+                            th:href="@{/admin/manage/order(p=${page.totalPages > 0 ? page.totalPages : 1})}"
+                            aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+</main>
+
+<!-- content -->
+
+
+</html>

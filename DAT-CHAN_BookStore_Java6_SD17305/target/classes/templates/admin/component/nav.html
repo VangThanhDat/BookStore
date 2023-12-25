@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="htpp://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <nav id="menu" th:fragment="nav">
+        <ul>
+            <li><a th:href="@{/admin/index}">Trang chủ</a></li>
+            <li><a th:href="@{/admin/manage/users}">Quản lý người
+                    dùng</a></li>
+            <li><a th:href="@{/admin/manage/products}">Quản lý sản phẩm</a></li>
+            <li><a th:href="@{/admin/manage/order}">Quản lý đơn hàng</a></li>
+            <li><span class="opener">Tổng hợp-Thống kê</span>
+                <ul>
+                    <li><a th:href="@{/admin/statictis/TKSP}">Thống kê sản
+                            phẩm</a></li>
+                    <li><a th:href="@{/admin/statictis/TKDT}">Thống kê doanh thu</a></li>
+                </ul>
+            </li>
+           
+            <li><span class="opener" th:text="${session.adminName}"></span>
+            
+                <ul>
+                    <li><a href="/auth#!/change-info">Thông tin tài
+                            khoản</a></li>
+                    <li><a href="/">Thoát khỏi trang quản trị</a></li>
+                    <li ng-click="logout()"><a>Đăng xuất</a></li>
+                </ul>
+            </li>
+            <br>
+            <br>
+            <br>
+        </ul>
+    </nav>
+</body>
+
+</html>

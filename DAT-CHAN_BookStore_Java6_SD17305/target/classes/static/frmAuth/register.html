@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<div ng-controller="registerCtrl">
+
+    <div class="vh-100 mt-5 d-flex justify-content-center align-items-center">
+        <form class="w-25 border p-3 rounded shadow slide-down mt-5" name="frmRegister" novalidate>
+            <h3 class="text-center mb-3">Đăng ký tài khoản</h3>
+            <div class="form-group mb-3">
+                <label for="username">Tên đăng nhập</label>
+                <input type="text" name="username" ng-model="formData.username" class="form-control" required
+                    ng-model-options="{updateOn: 'blur'}" pattern="^[a-zA-Z0-9]{5,}$">
+                <span ng-show="frmRegister.username.$invalid && formSubmitted" class="pull-left" style="color: red;">Vui
+                    lòng nhập tên
+                    tài khoản hợp lệ, ít nhất 5 ký tự</span>
+            </div>
+            <div class="form-group mb-3">
+                <label for="fullname">Họ tên đầy đủ</label>
+                <input type="text" name="fullname" ng-model="formData.fullname" class="form-control" required
+                    ng-model-options="{updateOn: 'blur'}">
+                <span ng-show="frmRegister.fullname.$invalid && formSubmitted" class="pull-left" style="color: red;">Vui
+                    lòng nhập họ tên</span>
+            </div>
+            <div class="form-group mb-3">
+                <label for="email">Email</label>
+                <input type="email" name="email" ng-model="formData.email" class="form-control" required
+                    ng-model-options="{updateOn: 'blur'}">
+                <span ng-show="frmRegister.email.$invalid && formSubmitted" class="pull-left" style="color: red;">Vui
+                    lòng nhập email hợp lệ</span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label>Giới tính</label><br>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="true"
+                        ng-model="formData.gender" ng-model-options="{updateOn: 'blur'}">
+                    <label class="form-check-label" for="inlineRadio1">Nam</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gender" id="inlineRadio2" value="false"
+                        ng-model="formData.gender" ng-model-options="{updateOn: 'blur'}" required>
+                    <label class="form-check-label" for="inlineRadio2">Nữ</label>
+                </div>
+                <br>
+                <span ng-show="frmRegister.gender.$invalid && formSubmitted" class="pull-left" style="color: red;">Vui
+                    lòng chọn giới tính</span>
+            </div>
+            <div class="form-group mb-3">
+                <label for="birthday">Ngày sinh</label>
+                <input type="date" name="birthday" ng-model="formData.birthday" class="form-control" required
+                    ng-model-options="{updateOn: 'blur'}">
+                <span ng-show="frmRegister.birthday.$invalid && formSubmitted" class="pull-left" style="color: red;">Vui
+                    lòng chọn ngày sinh</span>
+            </div>
+            <div class="form-group mb-3">
+                <label for="phone">Số điện thoại</label>
+                <input type="text" name="phone" ng-model="formData.phone" class="form-control" required
+                    ng-model-options="{updateOn: 'blur'}" pattern="[0-9]{10}">
+                <span ng-show="frmRegister.phone.$invalid && formSubmitted" class="pull-left" style="color: red;">Vui
+                    lòng nhập số điện thoại hợp lệ (10 số từ 0 đến 9)</span>
+            </div>
+            <div class="form-group mb-3">
+                <label for="address">Địa chỉ</label>
+                <input type="text" name="address" ng-model="formData.address" class="form-control" required
+                    ng-model-options="{updateOn: 'blur'}">
+                <span ng-show="frmRegister.address.$invalid && formSubmitted" class="pull-left" style="color: red;">Vui
+                    lòng nhập địa chỉ</span>
+            </div>
+            <div class="form-group mb-3">
+                <label for="password">Mật khẩu</label>
+                <input type="password" name="password" ng-model="formData.password" class="form-control" required
+                    ng-model-options="{updateOn: 'blur'}" pattern=".{6,}">
+                <span ng-show="frmRegister.password.$invalid && formSubmitted" class="pull-left" style="color: red;">Vui
+                    lòng nhập mật khẩu hợp lệ ít nhất 6 ký tự</span>
+            </div>
+            <div class="form-group mb-3">
+                <label for="confirmPassword">Xác nhận mật khẩu</label>
+                <input type="password" name="confirmPassword" ng-model="formData.confirmPassword" class="form-control"
+                    required ng-model-options="{updateOn: 'blur'}">
+                <span ng-show="frmRegister.confirmPassword.$invalid && formSubmitted" class="pull-left"
+                    style="color: red;">Vui
+                    lòng nhập xác nhận mật khẩu</span>
+                <span
+                    ng-show="frmRegister.confirmPassword.$valid && formSubmitted && formData.password !== formData.confirmPassword"
+                    class="pull-left" style="color: red;">Mật khẩu không trùng khớp</span>
+            </div>
+            <button class="btn btn-primary col-12" ng-click="register()">Đăng ký</button>
+            <div class="my-2 form-group text-center">
+                <a style="text-decoration: none;" href="#!login">Đã có tài khoản? | Đăng
+                    nhập ngay</a>
+            </div>
+            <!-- <a href="/oauth2/authorization/google">Google</a>
+            <a href="/oauth2/authorization/facebook">Facebook</a> -->
+            <!-- ... -->
+        </form>
+    </div>
+
+</div>

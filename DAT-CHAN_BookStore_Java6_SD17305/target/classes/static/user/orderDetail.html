@@ -1,0 +1,58 @@
+<!--================Home Banner Area =================-->
+<section class="banner_area">
+  <div class="banner_inner d-flex align-items-center">
+    <div class="container">
+      <div class="banner_content d-md-flex justify-content-between align-items-center">
+        <div class="mb-3 mb-md-0">
+          <h2>Chi tiết hóa đơn</h2>
+        </div>
+        <div class="page_link">
+          <a href="/">Trang chủ</a>
+          <a href="#!order">Lịch sử</a>
+          <a >Chi tiết</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--================End Home Banner Area =================-->
+
+<!--================Cart Area =================-->
+<section class="cart_area">
+  <div class="container">
+    <div class="row col-md-12 mb-5 justify-content-end">
+      <button class="btn btn-danger" disabled>Hủy đơn hàng</button>
+    </div>
+    <div class="cart_inner">
+      <div class="table-responsive">
+        <table class="table table-hover table-bordered">
+          <thead>
+            <tr class="table-info">
+              <th scope="col" style="width: 10px !important;">STT</th>
+              <th scope="col" class="col-sm-1 text-center">Hình ảnh</th>
+              <th scope="col" class="text-center ">Mã sách</th>
+              <th scope="col">tên sách</th>
+              <th scope="col" class="text-center">Giá</th>
+              <th scope="col" class="text-center">Số lượng</th>
+              <th scope="col" class="text-center">Tổng</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="detail in itemsOrderDetail">
+              <td class="text-center">{{$index+1}}</td>
+              <td><img src="/image/{{detail.product.image}}" width="100%"></td>
+              <td class="text-center">{{detail.product.id}}</td>
+              <td>{{detail.product.name}}</td>
+              <td class="text-center">{{detail.product.price| number: 0}} VNĐ</td>
+              <td class="text-center">{{detail.quantityPurchased}}</td>
+              <td class="text-center">{{detail.quantityPurchased*detail.product.price| number: 0}} VNĐ</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+
+  </div>
+</section>
+<!--================End Cart Area =================-->

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{/admin/layout/layout :: dynamic(~{::main})}">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<main class="services">
+    <h1 class="text-center mb-5">Chi tiết hóa đơn: [[${order.id}]]</h1>
+    <div th:if="${order.status == 0}" class="d-flex justify-content-center align-items-center">
+        <div class="row col-10 d-flex justify-content-center align-items-center">
+            <div class="col-md-6 col-12">
+                <h3>Trạng thái: Chờ xác nhận</h3>
+            </div>
+            <form th:action="@{/admin/manage/detail-order/confirm/{orderID}(orderID=${order.id})}"
+                class="col-md-3 col-6" method="post">
+                <button class="btn btn-primary col-12 mb-2" style="font-size: 14px;">Xác nhận</button>
+            </form>
+            <form class="col-md-2 col-6" th:action="@{/admin/manage/detail-order/cancel/{orderID}(orderID=${order.id})}"
+                method="post">
+                <button class="btn btn-danger col-12 mb-2" style="font-size: 14px;">Hủy</button>
+            </form>
+        </div>
+    </div>
+    <div th:unless="${order.status == 0}">
+        <h3 class="text-center mb-5">Trạng thái: [[${order.status == 0 ? 'Chờ xác nhận' : order.status == 1 ? 'Đã xác
+            nhận' : 'Đã hủy'}]]</h3>
+    </div>
+    <div th:if="${message != null}">
+        <!-- Nội dung hiển thị khi message tồn tại -->
+        <h3 class="text-center mt-3" th:text="${message}"></h3>
+    </div>
+    <div th:unless="${message != null}">
+        <div class="container-fluid my-5">
+            <table class="table table-hover">
+                <thead class="table-info">
+                    <tr>
+                        <th>Mã hóa đơn chi tiết</th>
+                        <th>Tên sản phẩm</th>
+                        <th>Đơn giá</th>
+                        <th>Số lượng</th>
+                        <th>Thành tiền</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="item : ${page}" th:object="${item}">
+                        <th th:text="*{id}"></th>
+                        <td th:text="*{product.name}"></td>
+                        <td th:text="*{#numbers.formatDecimal(product.price, 0, 'COMMA', 0, 'POINT')} + ' VND'"></td>
+                        <td th:text="*{quantityPurchased}"></td>
+                        <td
+                            th:text="*{#numbers.formatDecimal(product.price * quantityPurchased, 0, 'COMMA', 0, 'POINT')} + ' VND'">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="row col-md-12 justify-content-center mt-4">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    <li class="page-item">
+                        <a class="page-link" th:href="@{/admin/manage/detail-order/{orderID}(p=1, orderID=${order.id})}"
+                            aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+
+                    <li class="page-item"><a class="page-link"
+                            th:href="@{/admin/manage/detail-order/{orderID}(p=${page.number < 1 ? 1 : page.number}, orderID=${order.id})}">&lt;</a>
+                    </li>
+                    <li class="page-item" th:each="item : ${#numbers.sequence(0, page.totalPages - 1)}">
+                        <a class="page-link"
+                            th:href="@{/admin/manage/detail-order/{orderID}(p=${item + 1}, orderID=${order.id})}"
+                            th:text="${item + 1}"></a>
+                    </li>
+                    <li class="page-item"><a class="page-link"
+                            th:href="@{/admin/manage/detail-order/{orderID}(p=${page.totalPages > 0 ? page.number + 2 > page.totalPages ? page.totalPages : page.number + 2 : 1}, orderID=${order.id})}">&gt;</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link"
+                            th:href="@{/admin/manage/detail-order/{orderID}(p=${page.totalPages > 0 ? page.totalPages : 1}, orderID=${order.id})}"
+                            aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</main>
+
+</html>
